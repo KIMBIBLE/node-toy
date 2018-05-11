@@ -37,21 +37,19 @@
 
 
         <main role="main" class="inner-cover">
-            <form class="form-login">
-                <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+            <form class="form-register">
+                <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+                <label for="inputID" class="sr-only">UserID</label>
+                <input type="userID" id="inputID" class="form-control" placeholder="UserID" required="">
+
                 <lable for="inputEmail" class="sr-only">Email address</lable>
                 <input type="email" id="inputEmail" class="form-control" placeholder="email address" required="" autofocus="">
 
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="btn btn-md btn-success btn-block" type="submit">Sign in</button>
+
+                <button class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
             </form>
-            <a href="/register" class="btn btn-md btn-primary btn-block">Sign up</a>
         </main>
 
         <footer class="mastfoot mt-auto">
