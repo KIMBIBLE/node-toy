@@ -14,9 +14,11 @@
         border-radius:0;
       }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.dev.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="stylesheets/cover.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -34,8 +36,18 @@
         </header>
 
         <main role="main" class="inner-cover">
-            <h1 class="cover-heading">Cover Your Page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+            <div class="bbkim">
+                <h1 class="cover-heading">Cover Your Page.</h1>
+                <div id="bbkim-chat">
+                    <div id="chat-window">
+                        <div id="output"></div>
+                        <div id="feedback"></div>
+                    </div>
+                    <input type="text" id="handle" placeholder="Handle">
+                    <input type="text" id="message" placeholder="message">
+                    <input id="send" type="submit">
+                </div>
+            </div>
         </main>
 
         <footer class="mastfoot mt-auto">
@@ -51,6 +63,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="javascript/bootstrap.min.js"</script>
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/chat.js"></script>
   </body>
 </html>
