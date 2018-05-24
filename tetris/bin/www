@@ -9,6 +9,32 @@ var debug = require('debug')('tetris:server');
 var http = require('http');
 var socket = require('socket.io');
 var User = require('./createUserSchema');
+//Import the mongoose module
+var mongoose = require('mongoose');
+
+//Set up default mongoose connection
+var mongoDB = 'mongodb://127.0.0.1/userAuthData';
+mongoose.connect(mongoDB);
+// Get Mongoose to use the global promise library
+mongoose.Promise = global.Promise;
+//Get the default connection
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+// Define schema
+var Schema = mongoose.Schema;
+
+var SomeModelSchema = new Schema({
+    userID: String,
+    userEmail: String,
+    userPassword: String
+});
+
+// Compile model from schema
+var userAuthInfo = mongoose.model('userAuthInfo', SomeModelSchema );
+
 
 /**
  * Get port from environment and store in Express.
@@ -106,4 +132,9 @@ io.on('connection', (socket) => {
         console.log('handle : ', data);
         socket.broadcast.emit('typing', data);
     });
+
+    socket.on('registerData', (data) => {
+        console.log(data);
+    });
+
 });
