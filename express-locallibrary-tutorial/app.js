@@ -29,7 +29,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -38,9 +38,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-//app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 //app.use('/', indexRouter);
-//app.use('/birds', birdsRouter);
+app.use('/birds', birdsRouter);
 
 app.use('/catalog', catalog);
 

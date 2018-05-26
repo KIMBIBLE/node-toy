@@ -7,6 +7,8 @@ var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
 
+
+
 /// BOOK ROUTES ///
 
 // GET catalog home page.
@@ -36,6 +38,8 @@ router.get('/book/:id', book_controller.book_detail);
 // GET request for list of all Book items.
 router.get('/books', book_controller.book_list);
 
+
+
 /// AUTHOR ROUTES ///
 
 // GET request for creating Author. NOTE This must come before route for id (i.e. display author).
@@ -61,6 +65,8 @@ router.get('/author/:id', author_controller.author_detail);
 
 // GET request for list of all Authors.
 router.get('/authors', author_controller.author_list);
+
+
 
 /// GENRE ROUTES ///
 
@@ -88,12 +94,14 @@ router.get('/genre/:id', genre_controller.genre_detail);
 // GET request for list of all Genre.
 router.get('/genres', genre_controller.genre_list);
 
+
+
 /// BOOKINSTANCE ROUTES ///
 
 // GET request for creating a BookInstance. NOTE This must come before route that displays BookInstance (uses id).
 router.get('/bookinstance/create', book_instance_controller.bookinstance_create_get);
 
-// POST request for creating BookInstance. 
+// POST request for creating BookInstance.
 router.post('/bookinstance/create', book_instance_controller.bookinstance_create_post);
 
 // GET request to delete BookInstance.
