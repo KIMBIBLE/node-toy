@@ -23,6 +23,6 @@ AuthorSchema
   return '/catalog/author/' + this._id;
 });
 
+
 //Export model
 module.exports = mongoose.model('Author', AuthorSchema);
-
